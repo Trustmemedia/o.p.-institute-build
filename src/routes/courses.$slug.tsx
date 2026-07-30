@@ -1,10 +1,10 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, BadgeCheck, CheckCircle2, Clock, IndianRupee, Layers } from "lucide-react";
 import { Reveal } from "@/components/site/Reveal";
-import { courses } from "@/data/site";
+import { courses, type Course } from "@/data/site";
 
 export const Route = createFileRoute("/courses/$slug")({
-  loader: ({ params }) => {
+  loader: ({ params }): { course: Course } => {
     const course = courses.find((c) => c.slug === params.slug);
     if (!course) throw notFound();
     return { course };
