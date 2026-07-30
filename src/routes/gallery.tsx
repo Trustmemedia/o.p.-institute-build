@@ -28,7 +28,7 @@ export const Route = createFileRoute("/gallery")({
     ],
     links: [{ rel: "canonical", href: "/gallery" }],
   }),
-  component: Gallery;
+  component: Gallery,
 });
 
 const images = [
